@@ -1,0 +1,22 @@
+1 - SELECT * FROM clients where name = 'mario'
+
+2 -SELECT clients.name, clients.surname FROM clients where birth_year = 1982
+
+3 -SELECT invoice_number FROM invoices where "IVA" = 20
+
+4- SELECT * FROM public.products WHERE EXTRACT(year FROM activation_date) = 2017 AND (in_production OR in_store);
+
+5-SELECT
+    i.invoice_number,
+    i.amount,
+    c.name AS client_name,
+    c.surname AS client_surname
+FROM
+    invoices AS i
+JOIN
+    clients AS c ON i.client_id = c.client_number
+WHERE
+    i.amount < 1000;
+
+
+6-
